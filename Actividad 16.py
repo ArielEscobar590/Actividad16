@@ -16,10 +16,10 @@ class Usuarios:
 
 class Biblioteca:
     def __init__(self):
-        self.libros = []
+        self.libros = {}
         self.usuarios = {}
 
-    def agregar(self):
+    def agregar_usuario(self):
             carnet = input("Ingresar carnet del usuario: ")
             if carnet in self.usuarios:
                 print("Ya existe un usuario con ese carnet.\n")
@@ -29,7 +29,7 @@ class Biblioteca:
             self.usuarios[carnet] = Usuarios(carnet, nombre, carrera)
             print("Usuario agregado.\n")
 
-    def mostrar(self):
+    def mostrar_usuario(self):
         if not self.usuarios:
             print("No hay usuarios registrados.\n")
             return
@@ -39,13 +39,42 @@ class Biblioteca:
             print(f"{i}. {usuario.mostrar()}")
         print()
 
-    def eliminar(self):
+    def eliminar_usuario(self):
         carnet_buscado = input("Ingresar el carnet del Usuario a eliminar: ")
         if carnet_buscado in self.usuarios:
             del self.usuarios[carnet_buscado]
             print("Usuario eliminado.\n")
         else:
             print("Usuario no encontrado.\n")
+
+    def agregar_libro(self):
+        titulo = input("Ingresar Título del Libro a agregar: ")
+        autor = input("Ingresar autor del libro: ")
+        año= input("Ingresar año de publicación del libro: ")
+        codigo = input("Ingresar codigo del libro: ")
+        if codigo in self.libros:
+            print("Ya existe un libro con ese codigo.\n")
+            return
+        self.usuarios[codigo] = Libros(titulo, autor, año)
+        print("Libro agregado.\n")
+
+    def mostrar_libro(self):
+        if not self.libros:
+            print("No hay libros registrados.\n")
+            return
+
+        print("\nLista de libros:")
+        for i, libro in enumerate(self.libros.values(), start=1):
+            print(f"{i}. {libro.mostrar()}")
+        print()
+
+    def eliminar_libro(self):
+        codigo_buscado = input("Ingresar el codigo del libro a eliminar: ")
+        if codigo_buscado in self.libros:
+            del self.libros[codigo_buscado]
+            print("Libro eliminado.\n")
+        else:
+            print("Libro no encontrado.\n")
 
 class Gestiones_Biblioteca:
     pass
