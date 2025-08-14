@@ -85,6 +85,8 @@ class Gestiones_Biblioteca:
     def devoluciones(self):
         pass
 
+biblioteca = Biblioteca()
+gestiones = Gestiones_Biblioteca()
 def main():
     while True:
         try:
@@ -102,22 +104,23 @@ def main():
 
             match(op):
                 case 1:
-                    pass
+                    biblioteca.agregar_usuario()
                 case 2:
-                    pass
+                    biblioteca.eliminar_usuario()
                 case 3:
-                    pass
+                    biblioteca.mostrar_usuario()
                 case 4:
-                    pass
+                    biblioteca.agregar_libro()
                 case 5:
-                    pass
+                    biblioteca.eliminar_libro()
                 case 6:
-                    pass
+                    biblioteca.mostrar_libro()
                 case 7:
-                    pass
+                    gestiones.prestamo()
                 case 8:
-                    pass
+                    gestiones.devoluciones()
                 case 9:
+                    print("Saliendo... ")
                     break
                 case _:
                     print("Opcion no valida.\n")
