@@ -1,3 +1,6 @@
+from idlelib.autocomplete import TRY_A
+
+
 class Libros:
     def __init__(self, titulo, autor, año, codigo):
         self.titulo = titulo
@@ -77,4 +80,46 @@ class Biblioteca:
             print("Libro no encontrado.\n")
 
 class Gestiones_Biblioteca:
-    pass
+    def prestamo(self):
+        pass
+    def devoluciones(self):
+        pass
+
+def main():
+    while True:
+        try:
+            op = int(0)
+            print("1) Agregar Usuario")
+            print("2) Eliminar Usuario")
+            print("3) Mostrar Usuarios")
+            print("4) Agregar Libro")
+            print("5) Eliminar Libro")
+            print("6) Mostrar Libros")
+            print("7) Prestar Libro")
+            print("8) Devolver Libro")
+            print("9) Salir")
+            op = int(input("Ingresar opcion: "))
+
+            match(op):
+                case 1:
+                    pass
+                case 2:
+                    pass
+                case 3:
+                    pass
+                case 4:
+                    pass
+                case 5:
+                    pass
+                case 6:
+                    pass
+                case 7:
+                    pass
+                case 8:
+                    pass
+                case 9:
+                    break
+                case _:
+                    print("Opcion no valida.\n")
+        except:
+            print("Hubo un Error")
