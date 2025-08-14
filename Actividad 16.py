@@ -20,12 +20,12 @@ class Biblioteca:
         self.usuarios = {}
 
     def agregar(self):
-            carnet = input("Ingresar carnet del estudiante: ")
+            carnet = input("Ingresar carnet del usuario: ")
             if carnet in self.usuarios:
-                print("Ya existe un estudiante con ese carnet.\n")
+                print("Ya existe un usuario con ese carnet.\n")
                 return
-            nombre = input("Ingresar nombre del estudiante: ")
-            carrera = input("Ingresar edad del estudiante: ")
+            nombre = input("Ingresar nombre del usuario: ")
+            carrera = input("Ingresar la carrera del Usuario: ")
             self.usuarios[carnet] = Usuarios(carnet, nombre, carrera)
             print("Usuario agregado.\n")
 
@@ -40,12 +40,12 @@ class Biblioteca:
         print()
 
     def eliminar(self):
-        carnet_buscado = input("Ingresar el carnet del estudiante a eliminar: ")
+        carnet_buscado = input("Ingresar el carnet del Usuario a eliminar: ")
         if carnet_buscado in self.usuarios:
             del self.usuarios[carnet_buscado]
-            print("Estudiante eliminado.\n")
+            print("Usuario eliminado.\n")
         else:
-            print("Estudiante no encontrado.\n")
+            print("Usuario no encontrado.\n")
 
 class Gestiones_Biblioteca:
     pass
