@@ -126,3 +126,5 @@ def main():
                     print("Opcion no valida.\n")
         except:
             print("Hubo un Error")
+
+main()
